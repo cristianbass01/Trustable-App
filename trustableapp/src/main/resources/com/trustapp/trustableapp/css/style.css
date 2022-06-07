@@ -1,0 +1,253 @@
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.white-box{
+    -fx-background-color: #FFFFFF;
+}
+
+.radius-box{
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+}
+
+.small-radius-box{
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.light-grey-box{
+    -fx-background-color: #E0FFFF;
+}
+
+.dark-grey-box{
+    -fx-background-color: #C7C7C7;
+}
+
+.grey-box{
+    -fx-background-color: #DDDDDD;
+}
+
+.ice-box{
+    -fx-background-color: #E0FBFC;
+}
+
+.light-blue-box{
+    -fx-background-color: #C2DFE3;
+}
+
+.grayish-box{
+    -fx-background-color: #5C6B73;
+}
+
+.dark-grayish-box{
+    -fx-background-color: #253237;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0, 0, 0, 0.1) , 10.0 , 0.0 , 0.0 , 10.0);
+}
+
+.dark-grey-border{
+    -fx-border-color: #2B2B2B;
+}
+
+.grey-border{
+    -fx-border-color: #DDDDDD;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal{
+    -fx-padding: 0 20 0 20;
+    -fx-background-color:transparent;
+
+}
+
+.scroll-bar:vertical{
+    -fx-padding: 20 0 20 0;
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill:  #253237;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 20;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color:  #5C6B73;
+    -fx-background-radius: 20;
+}
+
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #C2DFE3;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-effect: null;
+}
+
+.list-view{
+    -fx-control-inner-background: #E0FBFC;
+}
+
+
+.titled-pane
+{
+-fx-text-fill: -fx-text-base-color = white;
+}
+.titled-pane:focused
+{
+-fx-text-fill: white;
+}
+.titled-pane > .title
+{
+-fx-background-color: -fx-box-border, -fx-inner-border, -fx-body-color;
+-fx-background-radius: 5 5 5 5;
+-fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+}
+
+.titled-pane:focused > .title
+{
+-fx-color: -fx-focus-color;
+}
+
+.titled-pane > .title > .arrow-button
+{
+-fx-background-color: white;
+-fx-background-insets: 0;
+-fx-background-radius: 0;
+-fx-padding: 0.0em 0.25em 0.0em 0.0em; /* 0 3 0 0 */
+}
+
+.titled-pane > .title > .arrow-button .arrow
+{
+-fx-background-color: -fx-mark-highlight-color, -fx-mark-color;
+-fx-background-insets: 1 0 -1 0, 0;
+-fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+-fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.titled-pane:collapsed > .title > .arrow-button .arrow
+{
+-fx-rotate: -90;
+}
+
+.titled-pane > *.content
+{
+    -fx-background-color: -fx-box-border, -fx-body-color white;
+    -fx-background-insets: 0, 0 1 1 1;
+    -fx-padding: 0.167em;
+ }
+
+.titled-pane:focused > .title > .arrow-button .arrow
+{
+    -fx-background-color: white;
+}
+
+.white-button{
+    -fx-background-color: white;
+    -fx-text-fill: #253237;
+}
+
+#nationTitledPane{
+    -fx-background-color: white;
+    -fx-text-fill: #253237;
+    -fx-body-color: white;
+}
+
+#providerTitledPane{
+    -fx-background-color: white;
+    -fx-text-fill: #253237;
+    -fx-body-color: white;
+}
+
+#serviceTitledPane{
+    -fx-background-color: white;
+    -fx-text-fill: #253237;
+    -fx-body-color: white;
+}
+
+#serviceTypesTitledPane{
+    -fx-background-color: white;
+    -fx-text-fill: #253237;
+    -fx-body-color: white;
+}
+
+#stateTitledPane{
+    -fx-background-color: white;
+    -fx-text-fill: #253237;
+    -fx-body-color: white;
+}
+
+
+.sel-del-box: hover{
+    -fx-background-color: white;
+    -fx-text-fill: #5C6B73;
+}
+
+.titled-pane-box{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-text-fill: white;
+}
+
+.sel-del-box{
+    -fx-background-color: #5C6B73;
+    -fx-border-color: white;
+    -fx-text-fill:white;
+}
+
+.mode-res-box{
+    -fx-background-color: #C2DFE3;
+    -fx-text-fill: #253237;
+    -fx-border-color: transparent;
+}
+
+.mode-res-box: hover{
+    -fx-background-color: white;
+    -fx-text-fill: #C2DFE3;
+    -fx-border-color:#253237 ;
+}
+
+.mode-res-box: selected{
+    -fx-background-color: white;
+    -fx-text-fill: #C2DFE3;
+    -fx-border-color:#253237;
+}
+
+.searchOfStatusBox{
+    -fx-text-fill: white;
+    -fx-background-color: #5C6B73;
+}
+
+.searchOfServicesBox{
+    -fx-text-fill: white;
+    -fx-background-color: #5C6B73;
+}
+
+.searchOfStatusBox: hover{
+    -fx-border-color: #5C6B73;
+}
+
+.searchOfServicesBox: hover{
+    -fx-border-color: #5C6B73;
+}
+
+.button-active{
+    -fx-border-color: #5C6B73;
+    -fx-background-color: white;
+    -fx-text-fill:#5C6B73;
+}
+
