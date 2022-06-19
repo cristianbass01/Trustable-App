@@ -1,0 +1,420 @@
+@startuml
+title Design Model
+
+class Main {
+  main()
+}
+
+class Application {
+  start()
+}
+
+package API <<Folder>> {
+  class DataInitializer
+  class GetFromAPI
+}
+
+class DataInitializer {
+  instance
+  
+  getInstance()
+  getFromAPI()
+  initializeProv(provList)
+}
+
+class GetFromAPI<T> {
+  URLname
+  
+  getData()
+  initData()
+  apiToList(T.class)
+}
+
+package Controller <<Folder>> {
+  class MainController
+  
+  class BoxController
+  class ItemController
+  class NatCardController
+}
+
+class MainController {
+  page
+  
+  initialize()
+  tabPaneInit()
+  searchInit()
+  
+  searchIn()
+  nextPage()
+  prevPage()
+  selectAll()
+  deselectAll()
+  displayMode()
+  closeDisplay()
+  
+  research()
+  serviceSearch()
+  statusSearch()
+  advancedSearch()
+}
+
+package ControllerSavers <<Folder>> {
+  class MainControllerInstance
+}
+class MainControllerInstance {
+  mainController
+  
+  setInstance()
+  getInstance()
+}
+
+class BoxController<T> {
+  String data
+  
+  setData(T)
+  addItemInList()
+}
+class ItemController<T> {
+  String data
+  isSelected
+  
+  setData(T)
+  select()
+  deselect()
+}
+class NatCardController {
+  Nation nation
+  Image flagImg
+  isSelected
+  
+  select()
+  deselect()
+}
+
+
+package DataClass <<Folder>> {
+  class Nation
+  class Provider
+  class Service
+  class ServiceType
+  class State
+}
+class Nation{
+  String countryCode
+  String countryName
+  List<Provider> provList
+  
+  compareTo(otherNat)  
+}
+class Provider{
+  String name
+  String trustmark
+  Integer tspId
+  Nation nation
+  
+  Set<ServiceType> qServiceTypes
+  List<Service> services
+  
+  compareTo(otherProvider)
+}
+class Service{
+  Provider provider
+  Set<ServiceType> qServiceTypes
+  
+  String serviceName
+  String type
+  State currentStatus
+  Integer serviceId
+  String tob
+  
+  compareTo(otherService)
+}
+class ServiceType{
+  String serviceType
+  
+  Provider provider
+
+  compareTo(otherServiceType)
+}
+class State{
+  String status
+  
+  Service service
+  Servicetype serviceType
+  
+  compareTo(otherState)
+}
+
+package Error <<Folder>> {
+  class LaunchAlert
+}
+class LaunchAlert{
+  noItemNext()
+  noConnection()
+  noConnection()
+  noApiConnection()
+  noGUI()
+  stateError()
+}
+
+package GUI <<Folder>> {
+  class Box
+  class Card
+  class Item
+}
+class Box{
+  newBox(nation)
+  newBox(provider)
+  newBox(service)
+  newBox(status)
+  newBox(serviceType) 
+}
+
+class Card{
+  newCard(nation)
+}
+
+class Item{
+  newItem(service)
+  newItem(provider)
+  newItem(serviceType)
+  newItem(status)
+}
+
+package Loader <<Folder>> {
+  class Loader
+  class Show
+}
+class Loader{
+  loadNationPage(nationsToShow)
+  loadProviderPage(providersToShow)
+  loadServicePageFromProvider(servicesToShow)
+  loadServicePageFromState(servicesToShow)
+  loadServiceTypePage(serviceTypesToShow)
+  loadStatePageFromService(statesToShow)
+  loadStatePageFromServiceType(statesToShow)
+  clearAll()
+  reloadPage()
+}
+
+class Show{
+  showAllServicesFromProvider(servicesToShow)
+  showAllServicesFromState(servicesToShow)
+  showAllProviders(providersToShow)
+  showAllNations(nationsToShow)
+  showAllStateInService(states)
+  showAllStateInServiceType(states)
+}
+
+package Search <<Folder>> {
+  class Search
+}
+class Search{
+  searchNation(nationSet, natString)
+  searchProvider(nationForResearch, provString)
+  searchServiceType(providerForResearch,servTypeString)
+  searchServiceByState(serviceTypeSortedSet,stateForResearch,servString)
+  searchServiceTypeByProvider(providerForResearch,servString)
+  searchStateByServiceType(serviceTypeForResearch,stateString)
+  searchStateByService(serviceForResearch,stateString)
+  searchServiceByString(providers,servType,status)
+  searchStateByString(providers,servType)
+}
+
+package MyComparator <<Folder>> {
+  class comparatorForServiceInResearchServices
+  class comparatorForServiceInResearchStatus
+  class comparatorForStateInResearchServices
+  class comparatorForStateInResearchStatus
+}
+class comparatorForServiceInResearchServices{
+  compare(service,otherService)
+}
+class comparatorForServiceInResearchStatus{
+  compare(service,otherService)
+}
+class comparatorForStateInResearchServices{
+  compare(status,otherStatus)
+}
+class comparatorForStateInResearchStatus{
+  compare(status,otherStatus)
+}
+
+package DataLists <<Folder>> {
+  class NationData
+  class ProviderData
+  class ServiceData
+  class ServiceTypeData
+  class StateData
+  
+}
+
+class NationData{
+  NationData single_instance
+  
+  Set<Nation> nationList
+  Set<Nation> nationSelected
+  Set<Nation> nationDeselected
+  
+  ObsList<String> natViewData
+  
+  Set<NatCardController> visibleCardControllers
+  Set<BoxController> visibleBoxControllers
+  Map<Nation, NationCardController> natCardControllerMap
+  Map<Nation, BoxListController> natBoxControllerMap
+  getInstance()
+
+  needAllSelection()
+  
+  insertCardIn(nation)
+  insertboxIn(nation)
+  isBoxVisible(nation)
+  
+  clearAllBox()
+  clearAllCard()
+  clearSelected()
+  clearDeselected()
+}
+
+class ProviderData{
+  ProviderData single_instance
+  
+  Set<Provider> providerList
+  Set<Provider> providerSelected
+  Set<Provider> providerDeselected
+  Set<NationCardController> visibleItemControllers
+  Set<BoxListController> visibleBoxControllers
+  ObsList<String> provViewData
+  Map<Nation, NationCardController> provItemControllerMap
+  Map<Nation, BoxListController> provBoxControllerMap
+  
+  getInstance()
+  
+  needAllSelection()
+  clearDeselected()
+  isBoxVisible(provider)
+  insertItemIn(provider)
+  insertBoxIn(provider)
+  clearAllItems()
+  clearAllBox()
+  
+}
+
+class ServiceData{
+  ServiceData single_instance
+  Set<Service> allServices
+  List<BoxListController> visibleBoxControllers
+  List<ItemListController> visibleItemControllers
+  Set<Service> serviceSelected
+  ObsList<String> servViewData
+  Map<Service, BoxController> servBoxControllerMap
+  Map<Service, ItemController> servItemControllerMap
+  
+  getinstance()
+  
+  clearSelected()
+  needAllSelection()
+  insertItemInProvider(service)
+  insertItemInState(service)
+  insertBoxIn(service)
+  isBoxVisible(service)
+  clearAllItems()
+  clearAllBox()
+}
+
+class ServiceTypeData{
+  ServiceTypeData single_instance
+  
+  List<BoxListController> visibleBoxControllers
+  List<ItemListController> visibleItemControllers
+
+  Set<ServiceType> serviceTypesSelected
+  Set<ServiceType> serviceTypeDeselected
+  Map<String, ServiceType> allServiceTypes
+
+  ObsList<String> servTypesViewData
+
+  Map<ServiceType, BoxListController> serviceTypesBoxControllerMap
+  Map<ServiceType, ItemListController> serviceTypesItemControllerMap
+  
+  getInstance()
+
+  clearSelected()
+  needAllSelection()
+  insertItemIn(serviceType)
+  insertBoxIn(serviceType)
+  isBoxVisible(servicetype)
+  clearAllItems()
+  clearAllBox() 
+}
+
+class StateData{
+  StateData single_instance
+  dSet<State> allStates
+  List<BoxListController> visibleBoxControllers
+  List<ItemListController> visibleItemControllers
+  Set<State> stateSelected
+  ObsList<String> stateViewData
+  Map<State, BoxListController> stateBoxControllerMap
+  Map<State, ItemListController> stateItemControllerMap
+  
+  getInstance()
+  
+  clearSelected()
+  needAllSelection()
+  insertItemInService(status)
+  insertItemInServiceType(status)
+  insertBoxIn(status)
+  isBoxVisible(status)
+  clearAllItems()
+  clearAllBox() 
+}
+
+Main --> Application : "1 corresponds to 1"
+Application --> API : "contains 1"
+DataInitializer --> GetFromAPI : "has"
+MainControllerInstance --> MainController : "contains 1" 
+MainController -> NatCardController : "1 has 0...*"
+MainController -> BoxController : "1 has 0...*"
+BoxController --> ItemController : "1 has 0..."
+MainController -> ItemController : "1 has 0...*"
+
+Provider --> Service: "1 has 1...*"
+Service --> ServiceType: "0...* has 1...*"
+Nation --> Provider: "has"
+Service --> State: "0...* has 1"
+
+Box -- BoxController : "creates"
+Item -- ItemController : "creates"
+Card -- NatCardController : "creates"
+
+NatCardController --> Nation : "contains 0 or 1"
+ItemController --> Provider : "contains 0 or 1"
+ItemController --> Service : "contains 0 or 1"
+ItemController --> State : "contains 0 or 1"
+ItemController --> ServiceType : "contains 1"
+
+Search --> MyComparator : "uses"  
+MyComparator -> DataClass : "uses"
+
+MainController --> Loader : "uses"
+
+Loader --> Show : "has uses"
+
+DataLists --> DataClass : "has 0..."
+NationData --> Nation : "has 0..."
+ProviderData --> Provider : "has 0..."
+ServiceData --> Service : "has 0..."
+ServiceTypeData --> ServiceType : "has 0..."
+StateData --> State : "has 0..."
+
+NationData --> GUI : "has 0..."
+ProviderData --> GUI : "has 0..."
+ServiceData --> GUI : "has 0..."
+ServiceTypeData --> GUI : "has 0..."
+StateData --> GUI : "has 0..."
+MainController --> Search : "has 0..."
+API --> Error : "has 0..."
+GUI --> Error : "has 0..."
+@enduml
