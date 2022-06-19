@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.trustapp.trustableapp.Controller.MainController">
+   <children>
+      <BorderPane layoutY="-2.0" prefHeight="309.0" prefWidth="264.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="678.0" prefWidth="320.0" styleClass="light-blue-box" stylesheets="@css/style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="102.0" prefWidth="280.0" stylesheets="@css/style.css">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="91.0" prefWidth="240.0" stylesheets="@css/style.css">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="46.0" prefWidth="240.0" stylesheets="@css/style.css" text="Trust-able App" textFill="#253237">
+                                 <font>
+                                    <Font name="SansSerif Bold" size="24.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="small-radius-box" />
+                                    <String fx:value="white-box" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+                           </HBox.margin>
+                           <styleClass>
+                              <String fx:value="white-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                        </HBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="grayish-box" />
+                        <String fx:value="small-radius-box" />
+                     </styleClass>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Pane prefHeight="40.0" prefWidth="300.0" />
+                  <VBox fx:id="leftVBox" alignment="CENTER" prefHeight="567.0" prefWidth="300.0" spacing="20.0" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="labelLeft" alignment="CENTER" prefHeight="90.0" prefWidth="253.0" stylesheets="@css/style.css" text="Selected items" textFill="#253237">
+                           <font>
+                              <Font name="SansSerif Bold" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="light-blue-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                        </Label>
+                        <VBox fx:id="vBoxAccordion" alignment="CENTER" prefHeight="520.0" prefWidth="280.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <Accordion fx:id="accord" prefHeight="499.0" prefWidth="280.0" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                                 <panes>
+                                    <TitledPane fx:id="nationTitledPane" prefHeight="466.0" prefWidth="280.0" stylesheets="@css/style.css" text="Nations :" textFill="#253237">
+                                       <content>
+                                          <ListView fx:id="nationListView" styleClass="white-box" stylesheets="@css/style.css" />
+                                       </content>
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="grayish-box" />
+                                          <String fx:value="list-view" />
+                                       </styleClass>
+                                    </TitledPane>
+                                    <TitledPane fx:id="providerTitledPane" stylesheets="@css/style.css" text="Providers :" textFill="#253237">
+                                       <content>
+                                          <ListView fx:id="providerListView" prefHeight="50.0" prefWidth="440.0" styleClass="white-box" stylesheets="@css/style.css" />
+                                       </content>
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="grayish-box" />
+                                          <String fx:value="list-view" />
+                                       </styleClass>
+                                    </TitledPane>
+                                    <TitledPane fx:id="serviceTitledPane" stylesheets="@css/style.css" text="Services :" textFill="#253237">
+                                       <content>
+                                          <ListView fx:id="serviceListView" prefHeight="50.0" prefWidth="440.0" styleClass="white-box" stylesheets="@css/style.css" />
+                                       </content>
+                                       <styleClass>
+                                          <String fx:value="grayish-box" />
+                                          <String fx:value="list-view" />
+                                       </styleClass>
+                                    </TitledPane>
+                                    <TitledPane fx:id="serviceTypesTitledPane" stylesheets="@css/style.css" text="Service Types :" textFill="#253237">
+                                       <content>
+                                          <ListView fx:id="serviceTypesListView" prefHeight="50.0" prefWidth="440.0" styleClass="white-box" stylesheets="@css/style.css" />
+                                       </content>
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="grayish-box" />
+                                          <String fx:value="list-view" />
+                                       </styleClass>
+                                    </TitledPane>
+                                    <TitledPane fx:id="stateTitledPane" stylesheets="@css/style.css" text="Status :" textFill="#253237">
+                                       <content>
+                                          <ListView fx:id="statusListView" prefHeight="50.0" prefWidth="440.0" styleClass="white-box" stylesheets="@css/style.css" />
+                                       </content>
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="grayish-box" />
+                                          <String fx:value="list-view" />
+                                       </styleClass>
+                                    </TitledPane>
+                                 </panes>
+                                 <styleClass>
+                                    <String fx:value="white-box" />
+                                    <String fx:value="small-radius-box" />
+                                 </styleClass>
+                              </Accordion>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="white-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                        </VBox>
+                        <ScrollPane fx:id="displayScroll" prefHeight="300.0" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                           <styleClass>
+                              <String fx:value="ice-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                           <content>
+                              <Label fx:id="displayLabel" stylesheets="@css/style.css" text="Label" textFill="#253237">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="13.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="ice-box" />
+                                    <String fx:value="small-radius-box" />
+                                 </styleClass>
+                                 <padding>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </padding>
+                              </Label>
+                           </content>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </ScrollPane>
+                        <Button fx:id="closeDisplayBtn" mnemonicParsing="false" onAction="#closeDisplay" stylesheets="@css/style.css" text="Close" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Regular" size="15.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="sel-del-box" />
+                              <String fx:value="radius-box" />
+                           </styleClass>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                     </padding>
+                     <styleClass>
+                        <String fx:value="grayish-box" />
+                        <String fx:value="small-radius-box" />
+                     </styleClass>
+                  </VBox>
+                  <Pane prefHeight="40.0" prefWidth="300.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding></VBox>
+         </left>
+         <center>
+            <TabPane fx:id="tabPane" styleClass="light-blue-box" stylesheets="@css/style.css" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab closable="false" text="Research of Services">
+                     <content>
+                        <VBox alignment="CENTER" stylesheets="@css/style.css">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="740.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#selectAllItems" prefHeight="40.0" prefWidth="130.0" stylesheets="@css/style.css" text="Select All" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#deselectAllItems" prefHeight="40.0" prefWidth="130.0" text="Deselect All" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="SansSerif Regular" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Pane prefHeight="44.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                                    <HBox alignment="CENTER" fillHeight="false" prefHeight="44.0" prefWidth="437.0" spacing="10.0" stylesheets="@css/style.css">
+                                       <children>
+                                          <TextField fx:id="searchBarServices" prefHeight="24.0" prefWidth="674.0" promptText="Type to search in this selection" styleClass="transparent" stylesheets="@css/style.css">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="SansSerif Regular" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="white-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <Pane prefHeight="44.0" prefWidth="0.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" top="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="577.0" prefWidth="740.0" styleClass="transparent" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ScrollPane fx:id="scrollServices" fitToWidth="true" hbarPolicy="NEVER" stylesheets="@css/style.css" HBox.hgrow="SOMETIMES">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <styleClass>
+                                          <String fx:value="small-radius-box" />
+                                          <String fx:value="light-grey-box" />
+                                       </styleClass>
+                                    </ScrollPane>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="43.0" prefWidth="740.0" spacing="40.0">
+                                 <children>
+                                    <Button fx:id="previousButtonServices" mnemonicParsing="false" onAction="#previousPage" prefHeight="30.0" prefWidth="120.0" text="&lt; Previous" textFill="WHITE">
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label fx:id="pageLabelServices" alignment="CENTER" prefHeight="33.0" prefWidth="88.0" text="page 1/5" textFill="WHITE">
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="nextButtonServices" mnemonicParsing="false" onAction="#nextPage" prefHeight="30.0" prefWidth="120.0" text="Next &gt;" textFill="WHITE">
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="dark-grayish-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                        </VBox>
+                     </content>
+                     <styleClass>
+                        <String fx:value="mode-res-box" />
+                        <String fx:value="radius-box" />
+                     </styleClass>
+                  </Tab>
+                  <Tab closable="false" text="Research of Status">
+                     <content>
+                        <VBox alignment="CENTER" stylesheets="@css/style.css">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="44.0" prefWidth="740.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#selectAllItems" prefHeight="40.0" prefWidth="130.0" stylesheets="@css/style.css" text="Select All" textFill="WHITE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Button>
+                                    <Button mnemonicParsing="false" onAction="#deselectAllItems" prefHeight="40.0" prefWidth="130.0" text="Deselect All" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="SansSerif Regular" size="14.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Pane prefHeight="44.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                                    <HBox alignment="CENTER" fillHeight="false" prefHeight="44.0" prefWidth="437.0" spacing="10.0" stylesheets="@css/style.css">
+                                       <children>
+                                          <TextField fx:id="searchBarStatus" prefHeight="24.0" prefWidth="674.0" promptText="Type to search in this selection" styleClass="transparent" stylesheets="@css/style.css">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="SansSerif Regular" size="13.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="white-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </HBox>
+                                    <Pane prefHeight="44.0" prefWidth="0.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" top="10.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="577.0" prefWidth="740.0" styleClass="transparent" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ScrollPane fx:id="scrollStatus" fitToWidth="true" hbarPolicy="NEVER" stylesheets="@css/style.css" HBox.hgrow="SOMETIMES">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <styleClass>
+                                          <String fx:value="light-grey-box" />
+                                          <String fx:value="small-radius-box" />
+                                       </styleClass>
+                                    </ScrollPane>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="43.0" prefWidth="740.0" spacing="40.0">
+                                 <children>
+                                    <Button fx:id="previousButtonStatus" mnemonicParsing="false" onAction="#previousPage" prefHeight="30.0" prefWidth="120.0" text="&lt; Previous" textFill="WHITE">
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Label fx:id="pageLabelOfStatus" alignment="CENTER" prefHeight="33.0" prefWidth="88.0" text="page 1/4" textFill="WHITE">
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="nextButtonStatus" mnemonicParsing="false" onAction="#nextPage" prefHeight="30.0" prefWidth="120.0" text="Next &gt;" textFill="WHITE">
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="sel-del-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="dark-grayish-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                        </VBox>
+                     </content>
+                     <styleClass>
+                        <String fx:value="mode-res-box" />
+                        <String fx:value="radius-box" />
+                     </styleClass>
+                  </Tab>
+                  <Tab closable="false" text="Research">
+                     <content>
+                        <VBox>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="61.0" prefWidth="740.0" spacing="10.0" stylesheets="@css/style.css">
+                                 <children>
+                                    <TextField fx:id="searchBarResearch" prefHeight="30.0" prefWidth="366.0" promptText="Type to search in all selections" styleClass="transparent" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ChoiceBox fx:id="searchByChoiceBox" prefHeight="26.0" prefWidth="134.0" stylesheets="@css/style.css" HBox.hgrow="ALWAYS">
+                                       <styleClass>
+                                          <String fx:value="transparent" />
+                                          <String fx:value="ice-box" />
+                                       </styleClass></ChoiceBox>
+                                    <Button mnemonicParsing="false" onAction="#researchTab" prefHeight="19.0" prefWidth="108.0" stylesheets="@css/style.css" text="Search" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="SansSerif Regular" size="13.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="8.0" top="8.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="light-blue-box" />
+                                          <String fx:value="radius-box" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="white-box" />
+                                    <String fx:value="radius-box" />
+                                 </styleClass>
+                                 <padding>
+                                    <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox prefHeight="754.0" prefWidth="740.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <ScrollPane fx:id="scrollResearch" fitToWidth="true" prefHeight="748.0" prefWidth="730.0" stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <styleClass>
+                                          <String fx:value="ice-box" />
+                                          <String fx:value="small-radius-box" />
+                                       </styleClass></ScrollPane>
+                                    <HBox alignment="CENTER" prefHeight="97.0" prefWidth="740.0" styleClass="dark-grayish-box" stylesheets="@css/style.css" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="dark-grayish-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                        </VBox>
+                     </content>
+                     <styleClass>
+                        <String fx:value="mode-res-box" />
+                        <String fx:value="radius-box" />
+                     </styleClass>
+                  </Tab>
+                  <Tab closable="false" text="Advanced research">
+                     <content>
+                        <HBox stylesheets="@css/style.css">
+                           <children>
+                              <VBox prefHeight="722.0" prefWidth="342.0" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <VBox stylesheets="@css/style.css" VBox.vgrow="ALWAYS">
+                                       <styleClass>
+                                          <String fx:value="ice-box" />
+                                          <String fx:value="small-radius-box" />
+                                       </styleClass>
+                                       <children>
+                                          <Label text="Advanced research of all parameters at once" textFill="#253237">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets left="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                             <children>
+                                                <Button fx:id="servicesResearch" mnemonicParsing="false" onAction="#serviceResearch" prefHeight="40.0" prefWidth="200.0" styleClass="searchOfServicesBox" stylesheets="@css/style.css" text="Search of Services" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="sel-del-box" />
+                                                      <String fx:value="radius-box" />
+                                                   </styleClass>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                                <Button fx:id="statusResearch" mnemonicParsing="false" onAction="#statusResearch" prefHeight="40.0" prefWidth="200.0" styleClass="searchOfStatusBox" stylesheets="@css/style.css" text="Search of Status" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="sel-del-box" />
+                                                      <String fx:value="radius-box" />
+                                                   </styleClass>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Label text="Search by :" textFill="#253237">
+                                             <VBox.margin>
+                                                <Insets left="20.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="SansSerif Regular" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <VBox fx:id="researchOfVBox" alignment="CENTER_LEFT" spacing="20.0" stylesheets="@css/style.css">
+                                             <styleClass>
+                                                <String fx:value="white-box" />
+                                                <String fx:value="small-radius-box" />
+                                                <String fx:value="shadow" />
+                                             </styleClass>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="24.0" prefWidth="602.0" spacing="20.0">
+                                                   <VBox.margin>
+                                                      <Insets right="100.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <Label text="Nation :" textFill="#253237">
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="15.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="searchTextNation" prefHeight="24.0" prefWidth="430.0" HBox.hgrow="ALWAYS">
+                                                         <styleClass>
+                                                            <String fx:value="small-radius-box" />
+                                                            <String fx:value="white-box" />
+                                                            <String fx:value="grey-border" />
+                                                         </styleClass></TextField>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefWidth="200.0" />
+                                                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                                   <children>
+                                                      <Label text="Provider :" textFill="#253237">
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="searchTextProvider" HBox.hgrow="ALWAYS">
+                                                         <styleClass>
+                                                            <String fx:value="white-box" />
+                                                            <String fx:value="grey-border" />
+                                                            <String fx:value="small-radius-box" />
+                                                         </styleClass></TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="100.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Separator fx:id="separator1" prefWidth="200.0" />
+                                                <HBox fx:id="serviceHBox" alignment="CENTER_LEFT" spacing="20.0">
+                                                   <children>
+                                                      <Label text="Service :" textFill="#253237">
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="searchTextService" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                         <styleClass>
+                                                            <String fx:value="white-box" />
+                                                            <String fx:value="grey-border" />
+                                                            <String fx:value="small-radius-box" />
+                                                         </styleClass>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="100.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Separator fx:id="separator2" prefWidth="200.0" />
+                                                <HBox fx:id="serviceTypeHBox" alignment="CENTER_LEFT" spacing="20.0">
+                                                   <children>
+                                                      <Label prefHeight="20.0" prefWidth="138.0" text="Service Type :" textFill="#253237">
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TilePane fx:id="tilePaneServices" prefColumns="10" />
+                                                      <CheckComboBox fx:id="comboBoxServiceType" maxWidth="1.7976931348623157E308" prefHeight="24.0" prefWidth="411.0" showCheckedCount="true" HBox.hgrow="SOMETIMES" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="100.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Separator fx:id="separator3" prefWidth="200.0" />
+                                                <HBox fx:id="stateOfServiceHBox" alignment="CENTER_LEFT" spacing="20.0">
+                                                   <children>
+                                                      <Label text="State of Service:" textFill="#253237">
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TilePane prefColumns="10" />
+                                                      <CheckComboBox fx:id="comboBoxState" maxWidth="1.7976931348623157E308" showCheckedCount="true" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="100.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="20.0" top="20.0" />
+                                             </padding>
+                                          </VBox>
+                                          <HBox alignment="CENTER" prefHeight="61.0" prefWidth="730.0">
+                                             <children>
+                                                <Button fx:id="advanceSearchBtn" mnemonicParsing="false" onAction="#advanceSearch" prefHeight="39.0" prefWidth="188.0" text="Search!" textFill="WHITE">
+                                                   <styleClass>
+                                                      <String fx:value="grayish-box" />
+                                                      <String fx:value="small-radius-box" />
+                                                   </styleClass>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="dark-grayish-box" />
+                              <String fx:value="small-radius-box" />
+                           </styleClass>
+                        </HBox>
+                     </content>
+                     <styleClass>
+                        <String fx:value="mode-res-box" />
+                        <String fx:value="radius-box" />
+                     </styleClass>
+                  </Tab>
+               </tabs>
+               <padding>
+                  <Insets bottom="10.0" right="10.0" top="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
