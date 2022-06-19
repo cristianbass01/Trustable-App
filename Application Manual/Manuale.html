@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+    <link href="img\icona.png" rel="icon"/>
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+<!-- Preloader -->
+<div class="preloader">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+    
+  <!-- Content
+  ============================ -->
+  <div id="content" role="main">
+    
+	<!-- Sidebar Navigation
+	============================ -->
+	<div class="idocs-navigation bg-light">
+      <ul class="nav flex-column ">
+        <li class="nav-item"><a class="nav-link active" href="#idocs_start">Launching the App</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#idocs_installation">Download and installation of Java</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_html_structure">Download and installation of the application</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_sass">How to use the application</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#idocs_layout">External libraries</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#idocs_content">Design Patterns GoF</a>
+			<ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#idocs_typography">Singleton</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_code">Simple Factory</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_table">Adaptee</a></li>
+			<li class="nav-item"><a class="nav-link" href="#idocs_icons">Composite</a></li>
+          </ul>
+		</li>
+			<ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#v1-1">v1.1</a></li>
+            <li class="nav-item"><a class="nav-link" href="#v1-0">v1.0</a></li>
+          </ul>
+		</li>
+      </ul>
+    </div>
+    
+    <!-- Docs Content
+	============================ -->
+    <div class="idocs-content">
+      <div class="container"> 
+        
+        <!-- Getting Started
+		============================ -->
+        <section id="idocs_start">
+        <h1>Trust-Able-App</h1>
+        <h2>Application Manual</h2>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6 col-lg-4">
+				<ul class="list-unstyled">
+					<li><strong>Author:</strong> 
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-4">
+				<ul>Giovanni Cinel</ul>
+        <ul>Cristian Bassotto</ul>
+        <ul>Gianluca Nordio</ul>
+        <ul>Anita Giacomin</ul>
+			</div>
+		</div>
+        <p class="alert alert-info">Exam project: <a target="_blank" href="https://webgate.ec.europa.eu/tl-browser/">UE Trust Service</a>.</p>
+        </section>
+        
+		<hr class="divider">
+		
+        <!-- Installation
+		============================ -->
+        <section id="idocs_installation">
+          <h2>Download and installation of Java</h2>
+          <p class="lead">Follow the steps below to setup your device to use the application:</p>
+            <ul>For the correct launch and use of this application, it is necessary the latest version of Java (Java 18).
+            <br>To check the version installed on the computer, open the Terminal and type: <b>java -version</b></ul>
+            <ul>If that is not the required version, please proceed to install it, following the instruction on the following link: <a href="https://www.oracle.com/java/technologies/downloads/#java18">Java 18</a> </ul>
+            <ul>If you are using windows, after having downloaded Java, you need to set a new path in the list of environment variables.<br> You can find the specification for the process here: <a href="https://www.java.com/en/download/help/path.html">how to set environment variables</a> </ul>
+        </section>
+        <hr class="divider">
+        <!-- HTML Structure
+		============================ -->
+        <section id="idocs_html_structure">
+          <h2>Download and installation of the application</h2>
+          <ul>Extract from the compressed folder its content. Open the new folder.<br>To open the application, choose the right .jar file (based on the system you are operating in) from: </ul>
+          <ul><ul><i>Trust-Able-App-Win.jar / Trust-Able-App-Lin.jar</i></ul></ul>
+          <ul>Double-click on the file to open the application. If this does not work, do the following process: <ul>
+            <li>open the terminal</li>
+            <li>move to the directory where the file above is inserted in</li>
+            <li>Execute the command:</li>
+              <ul><i>java -jar Trust-Able-App-Win.jar</i>  (for Windows)</ul>
+              <ul><i>java -jar Trust-Able-App-Lin.jar</i>  (for Linux)</ul>
+          </ul>
+          and that should open the software application.<br> Unfortunately the executable file for MacOs has not been successfully produced because of our limited resources.
+          </ul>
+        </section>
+        
+        <hr class="divider">
+		        
+		<!-- How to use the application
+		============================ -->
+        <section id="idocs_sass">
+          <h2>How to use the application</h2>
+          <ul>Launching the application, the first visualized page is the nation page of the Research of Services tab. <br> If the launch goes wrong, because of the inability of the system to reach the API,<br>necessary to download the items of the search, or because there is an error with the loading of the graphic interface, <br>the application launches an error, shown to the user as an alert.</ul>
+          <section> <b>Structure of the research of services / status tab</b>
+            <ul>
+              The page is structured as follows:
+              <div><center><img src="img/homepage.bmp" width="70%"></center></div>
+              There is a display on the left that is going to show all the selected nations (and the other parameters later on), chosen by the user.<br>
+              There are four different tabs on the top of the page, each one gives a different type of research that the user can experiment. <br>
+                Right below there are the two buttons <i>Select All</i> and <i>Deselect All</i>, that can select/deselect all items shown on the page. Next to them there is a search box that can search an item in the current page by typing in it (the search is dynamic, as it refreshes the content of the page at every typed letter).<br>
+              The majority of the page is occupied by the box that contains all the items of the page that the user can search through. These are selectable (and deselectable) cards. Double-clicking on one of them, the display shows the country code and name of the nation.<br>
+              At the bottom of the page, the number of the page we are in and a <i>Next</i> button that enables us to navigate through the different pages.
+              <ul><li>By moving to the next page without selecting any nation, the system is going to automatically select all nations and show all providers from all of them.</li>
+              <li>If there is no selectable item in the page, the system signals the inability to continue the search with only the given parameters (in the form of an alert message):
+                  <center><img src="img/alert.bmp" width="40%"></center>
+              </li></ul><br>
+                The provider page, the service type page and the status pages (the following pages after proceeding with the search by clicking <i>Next</i>) are all structured as above, with the exception that the section that contains all items shows all the new parameters divided in sections, designated by the selected boxes in the previous pages, and the button <i>Previous</i> also on the bottom of the page. Same goes for the first three pages of the <i>Research of Status</i> tab.<br>
+                The only thing that differs is in the status page: the box of the status contains a link. This link opens the page that describes the service status in depth. In the example below, we can see the division of the items of the page( in this case the status), first by nation, then by provider and last by service type (<i>granted</i> is in fact a link):<br>
+              <br><center><img src="img/state.bmp" width="50%"></center>
+            </ul>
+          </section>
+          <section> <b>Structure of the research tab</b>
+              <center><img src="img/researchTab.bmp" width="70%"></center>
+            <ul>
+                We can see the same display on the left and the same tabs on the top of the page. The main pane is empty and the search bar is now extended. The user can select which type of parameter to search for using the selector right next to the <i>Search</i> button. The search is done by typing in the search box the wanted item and pressing the button on the right. The pane should be showing the results of the search. If there are no items with the given name, the pane is going to stay empty.
+            </ul>
+          </section>
+            <section> <b>Structure of the advanced research tab</b>
+                <ul>At first, the newly opened tab is just going to show the mode buttons:
+                    <center><img src="img/advancedResearchTab.bmp" width="70%"></center>
+                </ul>
+                <ul>
+                    Those give the user two different options on what to obtain from the search, the services or their status (the same division made in the first two panes).
+                    <ul>
+                        <li>SEARCH OF SERVICE : the fillable parameters are nation, provider (by typed search) and service type and status (selector):<br></li>
+                        <center><img src="img/SearchForService.bmp" width="50%"></center>
+                        <li>SEARCH OF STATUS: the fillable parameters are nation, provider and service (all by typed search): </li>
+                        <center><img src="img/searchForStatus.bmp" width="50%"></center>
+                    </ul>
+                        The display helps the user to compile the boxes correctly by giving suggestions of the existing items, so the user does not make misspelling errors. If there is not a single service or status corresponding to the given parameters, the <i>Search!</i> button is not going to work.
+                        If there is one or more corresponding services or status, the click of the button is going to lead the user to the last page of the first two tabs (based on the type of search chosen), and it is going to show the results of the search.
+                </ul>
+            </section>
+        </section>
+        
+		<hr class="divider">
+		
+        <!-- Header
+		============================ -->
+        <section id="idocs_layout">
+          <h2>External libraries</h2>
+            <ul>
+                The external classes used are the main java.util data structures and ADT, such as<br>
+                <i>java.util.ArrayList </i>and<i> java.util.List.</i><br>
+                <i>java.io.IOException</i> is used in many files because it is a common exception thrown by many java classes.<br>
+                For this project, in order to create the graphic part, we used JavaFx. It is a java library that uses a FXML (a markup language) to generate a graphical user interface (GUI). The FXML code was generated thanks to Scene Builder, a graphical tool used to simplify the implementation of the GUI.
+            </ul>
+            <b>GetFromAPI</b>
+            <ul>
+                <ul><div><font color=#FFFFFF>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.io.BufferedReader<font color=#FF8000  >;</font></div>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.io.IOException<font color=#FF8000  >;</font></div>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.io.InputStreamReader<font color=#FF8000  >;</font></div>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.net.MalformedURLException<font color=#FF8000  >;</font></div>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.net.URL<font color=#FF8000  >;</font></div>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.net.URLConnection<font color=#FF8000  >;</font></div>
+                </font>
+                </div></ul>
+                <br>
+                <div><u>java.net.URL AND java.net.URLConnection</u> The abstract class URLConnection is the superclass of all classes that represent a communications link between the application and a URL. Instances of this class can be used both to read from and to write to the resource referenced by the URL. Creating a connection to a URL is done by invoking the openConnection() method on a URL. This method returns a connection object.</div>
+                <br>
+                <div><u>java.net.MalformedURLException:</u> Thrown to indicate that a malformed URL has occurred. Either no legal protocol could be found in a specification string or the string could not be parsed.</div>
+                <br>
+                <div><u>java.io.InputStreamReader:</u>  An InputStreamReader is a bridge from byte streams (in our case obtained by UrlConnection) to character streams: It reads bytes and decodes them into characters using a specified <a href="https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html">charset</a>.<br>
+                    Each invocation of one of an InputStreamReader's read() methods may cause one or more bytes to be read from the underlying byte-input stream. To enable the efficient conversion of bytes to characters, more bytes may be read ahead from the underlying stream than are necessary to satisfy the current read operation.
+                    For top efficiency, consider wrapping an InputStreamReader within a BufferedReader.
+                </div>
+                <div><u>java.io.BufferedReader:</u> Reads text from a character-input stream, buffering characters.</div>
+                <div><u>java.io.IOException:</u> Required as some of the imports above might throw an IOException.</div>
+            </ul>
+            <b>ItemListController</b>
+            <ul>
+                <ul><div><font color=#FFFFFF>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.awt.*<font color=#FF8000  >;</font></div>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.net.URI<font color=#FF8000  >;</font></div>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> java.net.URISyntaxException<font color=#FF8000  >;</font></div>
+                </font>
+                    <div><u>java.awt.*:</u> We import java.awt for the Desktop class. The Desktop class allows a Java application to launch associated applications registered on the native desktop to handle a <a href="https://docs.oracle.com/javase/7/docs/api/java/net/URI.html">URI</a>  or a file. Desktop class is able to launch the user-default browser to show a specified URI. We used it to open the state link on the default browser.</div>
+                    <div><u>java.net.URI :</u> Represents a Uniform Resource Identifier (URI) reference. It is  similar to the URL class.</div>
+                    <div><u>java.net.URISyntaxException:</u> import used in order to handle exception launched by java.net.URI.</div>
+                </div></ul>
+            </ul>
+            <b>MainController</b>
+            <ul>
+                <ul><div><font color=#FFFFFF>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font> org.controlsfx.control.CheckComboBox<font color=#FF8000  >;</font></div>
+                </font></div></ul>
+                <div><u>org.controlsfx.control.CheckComboBox :</u> It is an external library that imports a specific box. ControlsFX is a graphic package similar to JavaFX that implements more specific and complex boxes. CheckComboBox is a ComboBox of javaFX with checkBoxes in the listview.</div>
+            </ul>
+            <b>MyComparator</b>
+            <ul>
+                <ul><div><font color=#FFFFFF>
+                    <div style="background-color: #464646"><font color=#FF8000  >import</font>java.util.Comparator<font color=#FF8000  >;</font></div>
+                </font></div></ul>
+                <div><u>Comparator: </u> interface that states the fact the class creates a comparison function, which imposes a total ordering on some collection of objects. It is usually used for sorting Java objects. Comparator compares two objects in a <i>compare(Object1, Object2)</i> format.</div>
+            </ul>
+        </section>
+
+		<hr class="divider">
+		  
+    <section id="idocs_content">
+        <h2>Design Patterns GoF</h2>
+		<section id="idocs_typography">
+		  <b>Singleton</b>
+            <div><u>Singleton:</u> we used singleton to create classes that should have only one instance and so it should not be possible to generate more than one.</div>
+		</section>
+        <br>
+		<section id="idocs_code">
+		  <b>Simple factory</b>
+            <div><u>Simple Factory:</u> we used Simple factory in GetFromAPI because we obtain a different type of object created depending on the parameter used for the Generic Type.</div>
+		  </section>
+            <br>
+        <section id="idocs_table">
+          <b>Adaptee</b>
+            <div><u>Adaptee:</u> because we translated the data passed from a GET request to the API to a collection of nation objects, each one containing many providers. Instead of having many providers not grouped. The Adaptee that does the translation is the class DataInitializer.</div>
+          </section>
+		<br>
+        <section id="idocs_icons">
+          <b>Composite</b>
+            <div><u>Composite:</u>  the box corresponds to the Composite, in fact you can do some operations on it, add a component to it, remove a component from it or get the children. The items correspond to the leaves. In fact you can only do a limited set of operations on it and it cannot have a child.
+            </div>
+          </section>
+        <br>
+        <br>
+    </section>
+      </div>
+    </div>
+	
+  </div>
+  <!-- Footer end -->
+  
+</div>
+<!-- Document Wrapper end --> 
+
+<!-- Back To Top --> 
+<a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+
+<!-- JavaScript
+============================ -->
+<script src="assets/vendor/jquery/jquery.min.js"></script> 
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<!-- Highlight JS -->
+<script src="assets/vendor/highlight.js/highlight.min.js"></script> 
+<!-- Easing --> 
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> 
+<!-- Magnific Popup --> 
+<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
+<!-- Custom Script -->
+<script src="assets/js/theme.js"></script>
+</body>
+</html>
